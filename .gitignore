@@ -21,3 +21,25 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+--------------------------------------------
+The main problem here I faced by visualizing the data that it is array or object because we initialized it using array in useState but it changed to object here how the data looks like which also passed as props,
+
+const addDataHandler = (gotData) => {
+  setData((prevData) => {
+    const newData = {
+      'Electronic Items': [
+        { id: 3, price: 25, name: 'Tablet', category: 'Electronic Items' },
+        { id: 1, price: 20, name: 'Smartphone', category: 'Electronic Items' },
+        { id: 2, price: 15, name: 'Laptop', category: 'Electronic Items' }
+      ],
+      'Food Items': [
+        { id: 4, price: 8, name: 'Milk', category: 'Food Items' }
+      ]
+    };
+    return newData;
+  });
+};
+// Now, 'data' still has two keys: 'Electronic Items' and 'Food Items', but 'Electronic Items' array is updated
+// Now, 'data' is an object with 'Electronic Items' as a key and an array of items as its value
